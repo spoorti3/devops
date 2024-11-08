@@ -2,15 +2,15 @@ pipeline {
     agent any  // Use any available agent, or specify a specific one if needed
 
     environment {
-        GIT_REPO_URL = 'https://github.com/spoorti3/firstrepository.git'  // Replace with your repository URL
-        BRANCH_NAME = 'main'  // Replace with your target branch
+        GIT_REPO_URL = 'https://github.com/spoorti3/devops.git'  // Replace with your repository URL
+        BRANCH_NAME = 'master'  // Replace with your target branch
     }
 
     stages {
         stage('Checkout') {
             steps {
                 // Clone code from Git repository
-                git url: "${GIT_REPO_URL}", branch: "${BRANCH_NAME}", credentialsId: 'GitHub-credentials'
+                git url: "${GIT_REPO_URL}", branch: "master", credentialsId: 'GitHub-credentials'
             }
         }
 
